@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Define custom images
         const images = {
             neutral: "neutral.png",
-            warning1: "your_custom_image_30min.png",
-            warning2: "your_custom_image_45min.png",
-            warning3: "your_custom_image_1hr.png",
-            warning4: "your_custom_image_1hr15.png",
-            warning5: "your_custom_image_1hr30.png"
+            warning1: "quokka_30min.png",
+            warning2: "quokka_45min.png",
+            warning3: "quokka_1hr.png",
+            warning4: "quokka_1hr15.png",
+            warning5: "quokka_1hr30.png"
         };
 
         list.innerHTML = "";
