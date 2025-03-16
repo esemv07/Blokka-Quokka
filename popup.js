@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const timeData = result.timeData || {};
         const list = document.getElementById("time-list");
         const image = document.getElementById("status-image");
+        const statusText = document.getElementById("status-text");
 
         // Define custom images
         const images = {
@@ -27,11 +28,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Set the image variable based on time spent
         let currentImage = images.neutral;
-        if (totalTime >= 30) currentImage = images.warning1;
-        if (totalTime >= 45) currentImage = images.warning2;
-        if (totalTime >= 60) currentImage = images.warning3;
-        if (totalTime >= 75) currentImage = images.warning4;
-        if (totalTime >= 90) currentImage = images.warning5;
+        if (totalTime >= 30 && totalTime <= 31) { 
+            currentImage = images.warning1;
+            statusText.textContent = "Go touch some grass";
+            chrome.windows.create({
+                url: "popup.html",
+                type: "popup", // Create a small popup window
+                width: 400,
+                height: 400
+            });
+        } else if (totalTime = 45 && totalTime <= 46) {
+            currentImage = images.warning2;
+            statusText.textContent = "Go do your assessments loser";
+            chrome.windows.create({
+                url: "popup.html",
+                type: "popup", // Create a small popup window
+                width: 400,
+                height: 400
+            });
+        } else if (totalTime = 60 && totalTime <= 61){
+            currentImage = images.warning3;
+            statusText.textContent = "What are you doing with your life mate?";
+            chrome.windows.create({
+                url: "popup.html",
+                type: "popup", // Create a small popup window
+                width: 400,
+                height: 400
+            });
+        } else if (totalTime = 75 && totalTime <= 76) {
+            currentImage = images.warning4;
+            statusText.textContent = "Go do something before I doxx you";
+            chrome.windows.create({
+                url: "popup.html",
+                type: "popup", // Create a small popup window
+                width: 400,
+                height: 400
+            });
+        } else if (totalTime = 90 && totalTime <= 91) {
+            currentImage = images.warning5;
+            statusText.textContent = "Mum would be disappointed with you";
+            chrome.windows.create({
+                url: "popup.html",
+                type: "popup", // Create a small popup window
+                width: 400,
+                height: 400
+            });
+        } else currentImage = images.neutral;
 
         // Apply the image
         image.src = currentImage;
